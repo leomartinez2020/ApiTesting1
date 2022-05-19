@@ -78,6 +78,7 @@ public class PostRequests extends SetProperties {
     }
 
     /**
+     * NEW METHOD
      * Agrega una película de acuerdo a su ID en la lista indicada
      * */
     public void addMovieToList(int movieId, String listId) {

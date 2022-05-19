@@ -32,6 +32,7 @@ public class GetRequests extends SetProperties {
     }
 
     /**
+     * NEW METHOD
      * Dada una lista, revisa si contiene el título de la película
      * */
     public void assertMovieInList(String listId, String expectedName) {
@@ -48,6 +49,7 @@ public class GetRequests extends SetProperties {
     }
 
     /**
+     * NEW METHOD
      * Sabiendo el ID de la película podemos determinar su género
      * */
     public void assertMovieGenreName(int movieId, String expectedName) {
@@ -65,6 +67,7 @@ public class GetRequests extends SetProperties {
     }
 
     /**
+     * NEW METHOD
      * Revisa que la longitud del array cast es mayor que 10
      * */
     public void assertCastLength(int movieId, int minLength) {
