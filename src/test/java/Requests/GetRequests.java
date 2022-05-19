@@ -31,6 +31,9 @@ public class GetRequests extends SetProperties {
         return response.jsonPath().getString("request_token");
     }
 
+    /**
+     * Dada una lista, revisa si contiene el título de la película
+     * */
     public void assertMovieInList(String listId, String expectedName) {
         Response response = given()
                 .queryParam("api_key", getApi_key())
@@ -40,14 +43,14 @@ public class GetRequests extends SetProperties {
                 .statusCode(200)
                 .extract()
                 .response();
-        //System.out.println(response.jsonPath().get("items[0].original_title").toString());
         String actualName = response.jsonPath().get("items[0].original_title").toString();
-        //System.out.println(actualName);
         Assert.assertEquals(expectedName, actualName);
-        //return response.jsonPath().getString("request_token");
     }
 
-    public void assertMovieListName(int movieId, String expectedName) {
+    /**
+     * Sabiendo el ID de la película podemos determinar su género
+     * */
+    public void assertMovieGenreName(int movieId, String expectedName) {
         Response response = given()
                 .queryParam("api_key", getApi_key())
                 .when()
@@ -61,6 +64,9 @@ public class GetRequests extends SetProperties {
         Assert.assertEquals(expectedName, actualName);
     }
 
+    /**
+     * Revisa que la longitud del array cast es mayor que 10
+     * */
     public void assertCastLength(int movieId, int minLength) {
         Response response = given()
                 .queryParam("api_key", getApi_key())
@@ -71,7 +77,6 @@ public class GetRequests extends SetProperties {
                 .extract()
                 .response();
         ArrayList castList = response.jsonPath().get("cast");
-        System.out.println(response.jsonPath().get("cast"));
-        //Assert.assertTrue(castList.length() > minLength);
+        Assert.assertTrue(castList.size() > minLength);
     }
 }

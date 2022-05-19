@@ -49,12 +49,12 @@ public class TMDB {
     @Test
     public void confirmMovieGenre() {
         GetRequests listDetailsRequest = new GetRequests();
-        listDetailsRequest.assertMovieListName(799876, "Crime");
+        listDetailsRequest.assertMovieGenreName(799876, "Crime");
     }
 
     @Test
-    public void assertCastGreaterThan10() {
+    public void assertCastGreaterThanFive() {
         GetRequests listDetailsRequest = new GetRequests();
-        listDetailsRequest.assertCastLength(799876, 10);
+        listDetailsRequest.assertCastLength(799876, 5);
     }
 }

@@ -77,6 +77,9 @@ public class PostRequests extends SetProperties {
         Assert.assertEquals("true", response.jsonPath().getString("success"));
     }
 
+    /**
+     * Agrega una película de acuerdo a su ID en la lista indicada
+     * */
     public void addMovieToList(int movieId, String listId) {
         jsonObject
                 .put("media_id", movieId);
