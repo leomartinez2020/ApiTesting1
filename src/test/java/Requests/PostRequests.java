@@ -24,7 +24,7 @@ public class PostRequests extends SetProperties {
     }
 
     public String validateToken() {
-        getRequest.generateToken();
+        //getRequest.generateToken();
         jsonObject
                 .put("username", getUsername())
                 .put("password", getPassword())

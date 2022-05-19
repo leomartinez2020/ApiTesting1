@@ -37,6 +37,24 @@ public class TMDB {
     @Test
     public void addMovie() {
         PostRequests postRequest = new PostRequests();
-        postRequest.addMovieToList(799876, "8200567");
+        postRequest.addMovieToList(799876, "8200420");
+    }
+
+    @Test
+    public void confirmMovieInList() {
+        GetRequests listDetailsRequest = new GetRequests();
+        listDetailsRequest.assertMovieInList("8200420", "The Outfit");
+    }
+
+    @Test
+    public void confirmMovieGenre() {
+        GetRequests listDetailsRequest = new GetRequests();
+        listDetailsRequest.assertMovieListName(799876, "Crime");
+    }
+
+    @Test
+    public void assertCastGreaterThan10() {
+        GetRequests listDetailsRequest = new GetRequests();
+        listDetailsRequest.assertCastLength(799876, 10);
     }
 }
